@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>task</title>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+            function showtime() {
+
+                var h = new Date().getHours();
+                var m = new Date().getMinutes();
+                var s = new Date().getSeconds();
+
+
+                if (h > 12) {
+                    h = h - 12;
+                    var t = h + ":" + m + ":" + s + " PM";
+                }
+                else {
+                    var t = h + ":" + m + ":" + s + " AM";
+                }
+
+                document.querySelector('#clock').innerHTML = t;
+                setTimeout(showtime, 1000);
+            }
+            showtime()
+        });
+
+    </script>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .clockbox {
+            position: fixed;
+            color: white;
+            text-align: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 70px;
+            box-sizing: border-box;
+            width: 450px;
+
+            padding: 30px;
+            border: 10px solid olivedrab;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div id="clock" class="clockbox">
+
+    </div>
+</body>
+
+</html>
